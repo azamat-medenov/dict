@@ -1,0 +1,14 @@
+{% extends 'words/base.html' %}
+
+{% block content %}
+<main class="container text-center mt-5">
+        <div class="inputs">
+            <div class="d-flex mb-3">
+                <input type="text" placeholder="New Word" class="form-control left-input mr-4">
+                <input type="text" placeholder="Translation" class="form-control right-input ml-4">
+            </div>
+            <input type="text" placeholder="Context" class="form-control mb-4 center-input">
+            <button id="saveButton" class="btn btn-primary rounded-pill btn-lg">Save</button>
+        </div>
+    </main>
+{% endblock %}

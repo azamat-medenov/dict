@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* Light gray background color */
+    color: #333; /* Dark text color */
+}
+
+header {
+    background-color: #303030; /* Dark gray header background */
+    color: white; /* White text color */
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 24px;
+    margin: 0;
+    color: white; /* White text color */
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.left-input, .center-input, .right-input {
+    border-radius: 40px;
+    padding: 2rem;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5rem;
+    font-size: 25px;
+    color: #333; /* Dark text color */
+    background-color: #fff; /* White input background */
+    transition: border-color 0.3s; /* Add transition for smooth effect */
+    width: 500px; /* Text areas fill the available width */
+    height: 100px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.center-input {
+    width: 100%;
+}
+
+
+.center-input::placeholder {
+    text-align: center;
+}
+
+.button-area {
+    margin-top: 1rem;
+}
+
+.d-flex {
+    margin-bottom: 1.5rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Rounded button */
+.rounded-pill {
+    border-radius: 50px;
+    padding: 0.5rem 2rem;
+    background-color: #303030; /* Dark gray button background */
+    border: none;
+    color: white; /* White text color */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Button animation */
+.rounded-pill:hover {
+    background-color: #272727; /* Slightly darker gray on hover */
+}
