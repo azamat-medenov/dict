@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 
@@ -17,4 +17,10 @@ class CreateEntryView(CreateView):
         form.instance.user = self.request.user
         return super(CreateEntryView, self).form_valid(form)
 
+class EntriesList(ListView):
+    model = Entry
+    template_name = 'words/entries_list.html'
+    context_object_name = 'entries'
 
+    def get_queryset(self):
+        return Entry.objects.order_by('-time_updated')

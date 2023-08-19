@@ -1,0 +1,29 @@
+{% extends 'words/base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="container text-center mt-5">
+    <div class="entries">
+        <h2 class="mb-4">My Dictionary Entries</h2>
+        <ul class="list-group">
+            {% for entry in entries %}
+            <li class="list-group-item">
+                <div class="d-flex justify-content-between">
+                    <h4>{{ entry.word }}</h4>
+                    <div>
+                        <button class="btn btn-primary btn-sm translate-button">Translate</button>
+                        <p class="translation">{{ entry.translation }}</p>
+                    </div>
+                </div>
+                <div class="context-dropdown">
+                    <p class="context">{{ entry.context }}</p>
+                </div>
+            </li>
+            {% empty %}
+            <p>No entries found.</p>
+            {% endfor %}
+        </ul>
+    </div>
+</main>
+<script src="{% static 'words/js/scripts.js' %}"></script>
+{% endblock %}

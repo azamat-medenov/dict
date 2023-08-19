@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 class Entry(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     word = models.CharField(max_length=255, unique=True)
+    time_updated = models.DateTimeField(auto_now=True)
     translation = models.CharField(max_length=255)
     context = models.TextField()
 
