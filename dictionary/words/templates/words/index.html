@@ -2,13 +2,24 @@
 
 {% block content %}
 <main class="container text-center mt-5">
-        <div class="inputs">
+    <div class="inputs">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
             <div class="d-flex mb-3">
-                <input type="text" placeholder="New Word" class="form-control left-input mr-4">
-                <input type="text" placeholder="Translation" class="form-control right-input ml-4">
+                {{ form.word }}
+                {{ form.translation }}
             </div>
-            <input type="text" placeholder="Context" class="form-control mb-4 center-input">
-            <button id="saveButton" class="btn btn-primary rounded-pill btn-lg">Save</button>
-        </div>
-    </main>
+            <div class="invalid-input">
+                {{ form.word.errors }}
+                {{ form.translation.errors }}
+            </div>
+            {{ form.context }}
+            <div class="invalid-input">
+                {{ form.context.errors }}
+            </div>
+            <button type="submit" class="btn btn-primary rounded-pill btn-lg">Save</button>
+        </form>
+    </div>
+</main>
 {% endblock %}

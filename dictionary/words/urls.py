@@ -1,7 +1,9 @@
 from django.urls import path
 
-from .views import *
+from .views import CreateEntryView
+
+app_name = 'words'
 
 urlpatterns = [
-    path('', HomePage.as_view(), name='home'),
+    path('', CreateEntryView.as_view(), name='home'),
 ]

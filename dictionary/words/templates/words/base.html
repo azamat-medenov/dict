@@ -10,19 +10,12 @@
     {% block title %}<title>Dictionary</title>{% endblock %}
 </head>
 <body>
-{% if user.is_authenticated %}
     <header class="text-center">
-            <button id="myWordsButton" class="btn btn-secondary rounded-pill">My Words</button>
-            <h1 class="title">My Dictionary</h1>
-            <a href="#" class="btn btn-secondary rounded-pill">Log out</a>
+        <button id="myWordsButton" class="btn btn-secondary rounded-pill">Words</button>
+        <h1 class="title">Dictionary</h1>
+        <a href="#" class="btn btn-secondary rounded-pill">Log out</a>
     </header>
 {% block content %}
 {% endblock %}
-{% else %}
-    <div class="not-authenticated">
-            <p>You are not logged in.</p>
-            <a href="#" class="btn btn-primary rounded-pill">Log In</a>
-        </div>
-{% endif %}
 </body>
 </html>
