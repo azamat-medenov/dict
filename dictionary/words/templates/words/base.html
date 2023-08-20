@@ -12,7 +12,7 @@
 <body>
     <header class="text-center">
         <a href="{% url 'words:words' %}" id="myWordsButton" class="btn btn-secondary rounded-pill">Words</a>
-        <h1 class="title">Dictionary</h1>
+        <h1 class="title"><a href="{% url 'words:home' %}" class="text-white">Dictionary</a></h1>
         <a href="#" class="btn btn-secondary rounded-pill">Log out</a>
     </header>
 {% block content %}
