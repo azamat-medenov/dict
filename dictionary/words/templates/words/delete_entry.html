@@ -1,0 +1,14 @@
+{% extends 'words/base.html' %}
+
+{% block content %}
+<main class="container text-center mt-5">
+    <div class="inputs">
+        <form method="post" class="delete-form">
+            {% csrf_token %}
+            <p class="delete-message">Are you sure you want to delete "{{ object }}"?</p>
+            {{ form }}
+            <button class="btn btn-danger delete-confirm" type="submit">Confirm</button>
+        </form>
+    </div>
+</main>
+{% endblock %}

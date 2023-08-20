@@ -1,4 +1,5 @@
 {% extends 'words/base.html' %}
+{% load static %}
 
 {% block content %}
 <main class="container text-center mt-5">
@@ -18,8 +19,18 @@
             <div class="invalid-input">
                 {{ form.context.errors }}
             </div>
-            <button type="submit" class="btn btn-primary rounded-pill btn-lg">Save</button>
+            <div class="button-row">
+                <button type="submit" class="btn btn-primary rounded-pill btn-lg">Save</button>
+                {% if update_entry %}
+                    <div class="word-entry">
+                        <a href="{{ entry.get_delete_url }}" class="delete-btn" href="">Delete</a>
+                    </div>
+                {% endif %}
+
+            </div>
         </form>
     </div>
+    </div>
 </main>
+<script src="{% static 'words/js/scripts.js' %}"></script>
 {% endblock %}

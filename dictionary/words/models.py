@@ -13,5 +13,8 @@ class Entry(models.Model):
     def get_absolute_url(self):
         return reverse('words:update', args=(self.pk,))
 
+    def get_delete_url(self):
+        return reverse('words:delete', args=(self.pk,))
+
     def __str__(self):
         return self.word

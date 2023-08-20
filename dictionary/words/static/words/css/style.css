@@ -116,3 +116,29 @@ ul {
 .not-authenticated a:hover {
     background-color: #0056b3; /* Slightly darker blue on hover */
 }
+.button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.button-row button {
+    flex: 1;
+    max-width: 150px; /* Adjust the maximum width as needed */
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c; /* Red background color */
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+    margin-left: 1rem; /* Increase the distance between buttons */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b; /* Slightly darker red on hover */
+}
