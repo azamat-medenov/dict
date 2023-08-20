@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.urls import reverse_lazy
 
 from .models import Entry
@@ -10,7 +10,7 @@ from .forms import EntryForm
 class CreateEntryView(CreateView):
     model = Entry
     form_class = EntryForm
-    template_name = 'words/index.html'
+    template_name = 'words/input_entry.html'
     success_url = reverse_lazy('words:home')
 
     def form_valid(self, form):
@@ -24,3 +24,10 @@ class EntriesList(ListView):
 
     def get_queryset(self):
         return Entry.objects.order_by('-time_updated')
+
+
+class EntryUpdateView(UpdateView):
+    form_class = EntryForm
+    model = Entry
+    template_name = 'words/input_entry.html'
+    success_url = reverse_lazy('words:words')

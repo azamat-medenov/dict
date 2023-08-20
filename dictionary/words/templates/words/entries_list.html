@@ -9,7 +9,7 @@
             {% for entry in entries %}
             <li class="list-group-item">
                 <div class="d-flex justify-content-between">
-                    <h4>{{ entry.word }}</h4>
+                    <h4><a href="{{ entry.get_absolute_url }}">{{ entry.word }}</a></h4>
                     <div>
                         <button class="btn btn-primary btn-sm translate-button">Translate</button>
                         <p class="translation">{{ entry.translation }}</p>
