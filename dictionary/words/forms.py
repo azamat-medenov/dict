@@ -1,7 +1,9 @@
 from django.forms import models
 from django import forms
+from django.contrib.auth.forms import AuthenticationForm
 
 from .models import Entry
+
 
 
 class EntryForm(models.ModelForm):
@@ -18,3 +20,12 @@ class EntryForm(models.ModelForm):
                                               'placeholder': 'Context'}),
 
         }
+
+
+
+class UserAuthenticationForm(AuthenticationForm):
+
+    error_messages = {
+        'invalid_login': 'Please enter a correct username and password.',
+        'inactive': 'This account is inactive.',
+    }

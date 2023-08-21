@@ -1,0 +1,33 @@
+{% extends 'words/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="login-container">
+        <form class="login-form" method="post">
+            {% csrf_token %}
+            <h2>Register</h2>
+        <table>
+        <tr>
+        <td>{{ form.non_field_errors }}</td>
+        </tr>
+            <tr>
+        <td>{{ form.username.label_tag }}</td>
+        <td>{{ form.username }}</td>
+                {{ form.username.errors }}
+        </tr>
+        <tr>
+        <td>{{ form.password1.label_tag }}</td>
+        <td>{{ form.password1 }}</td>
+            {{ form.password1.errors }}
+        </tr>
+            <td>{{ form.password2.label_tag }}</td>
+        <td>{{ form.password2 }}</td>
+            {{ form.password2.errors }}
+        </tr>
+        </table>
+            <button class="rounded-pill register-button" type="submit">Submit</button>
+        </form>
+</div>
+    <link type="text/css" rel="stylesheet" href="{% static 'words/css/style.css ' %}">
+{% endblock %}
+

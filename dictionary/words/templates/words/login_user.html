@@ -1,0 +1,25 @@
+{% extends 'words/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="login-container">
+    <form class="login-form" method="post">
+        {% csrf_token %}
+        <h2>Login</h2>
+        {{ form.non_field_errors }}
+        <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+        </table>
+        <button class="rounded-pill register-button" type="submit">Login</button><br>
+        <a href="{% url 'words:register' %}">haven't got an account?</a>
+    </form>
+</div>
+<link type="text/css" rel="stylesheet" href="{% static 'words/css/style.css ' %}">
+{% endblock %}
